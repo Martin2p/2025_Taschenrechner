@@ -23,11 +23,10 @@ public class FXMLController {
 	@FXML private Label ausgabe;
 	
 	//einzelne Deklarationen, sonst erkennt es der SceneBuilder nicht	
-	@FXML private RadioButton addition;
-	@FXML private RadioButton subtraktion;
-	@FXML private RadioButton multi;
-	@FXML private RadioButton division;
-	
+	@FXML private Button addition;
+	@FXML private Button subtraktion;
+	@FXML private Button multi;
+	@FXML private Button division;
 	
 	//die Methode setzt die Bühne auf den übergebenen Wert
 	public void setMeineStage(Stage meineStage) {
