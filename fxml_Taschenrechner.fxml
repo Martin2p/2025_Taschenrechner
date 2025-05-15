@@ -19,9 +19,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.FXMLController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.FXMLController">
    <children>
-      <MenuBar layoutY="1.0" prefHeight="25.0" prefWidth="422.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <MenuBar layoutY="1.0" prefHeight="25.0" prefWidth="400.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
           <Menu mnemonicParsing="false" text="Datei">
             <items>
@@ -37,7 +37,7 @@
       </MenuBar>
       <VBox layoutX="157.0" layoutY="25.333333333333332" prefHeight="375.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
          <children>
-            <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="428.0" prefWidth="600.0">
+            <SplitPane dividerPositions="0.3224489795918367" orientation="VERTICAL" prefHeight="255.0" prefWidth="400.0">
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                      <children>
@@ -50,36 +50,36 @@
                   </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="130.0" prefWidth="597.0">
                      <children>
-                        <GridPane alignment="CENTER" layoutX="17.0" layoutY="22.0" prefHeight="139.0" prefWidth="431.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <GridPane alignment="CENTER" layoutX="17.0" layoutY="22.0" prefHeight="154.0" prefWidth="397.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="186.6666259765625" minWidth="10.0" prefWidth="113.33340708414713" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.9999262491862" minWidth="10.0" prefWidth="160.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="190.0" minWidth="10.0" prefWidth="130.6666259765625" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.33337402343756" minWidth="10.0" prefWidth="170.33337402343756" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="186.6666259765625" minWidth="10.0" percentWidth="25.0" prefWidth="90.666748046875" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.9999262491862" minWidth="10.0" percentWidth="25.0" prefWidth="99.33329264322917" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="190.0" minWidth="10.0" percentWidth="25.0" prefWidth="99.33333333333334" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.33337402343756" minWidth="10.0" percentWidth="25.0" prefWidth="109.33333333333331" />
                           </columnConstraints>
                           <rowConstraints>
-                              <RowConstraints maxHeight="35.33331298828125" minHeight="8.000001907348633" prefHeight="21.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="35.99999809265137" minHeight="8.66668701171875" prefHeight="20.666703542073567" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="29.33333333333333" minHeight="10.0" prefHeight="25.9999631245931" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="31.33331298828125" minHeight="10.0" prefHeight="24.6666259765625" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="50.33334096272786" minHeight="8.000001907348633" percentHeight="25.0" prefHeight="36.99995930989583" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="49.00002034505209" minHeight="8.66668701171875" percentHeight="25.0" prefHeight="38.66670735677084" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="54.33335367838541" minHeight="10.0" percentHeight="25.0" prefHeight="38.66666666666666" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="55.33333333333334" minHeight="10.0" percentHeight="25.0" prefHeight="42.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Button mnemonicParsing="false" prefWidth="50.0" text="*" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                              <Button mnemonicParsing="false" onAction="#berechnenKlick" prefWidth="50.0" text="=" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                              <Button mnemonicParsing="false" prefWidth="50.0" text="+" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                              <Button mnemonicParsing="false" prefWidth="50.0" text="-" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                              <Button alignment="CENTER" contentDisplay="CENTER" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" prefWidth="50.0" text="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                              <Button mnemonicParsing="false" prefWidth="50.0" text="2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                              <Button mnemonicParsing="false" prefWidth="50.0" text="3" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                              <Button mnemonicParsing="false" prefWidth="50.0" text="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                              <Button alignment="CENTER" mnemonicParsing="false" prefWidth="50.0" text="5" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                              <Button mnemonicParsing="false" prefWidth="50.0" text="6" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                              <Button mnemonicParsing="false" prefWidth="50.0" text="7" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                              <Button mnemonicParsing="false" prefWidth="50.0" text="8" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                              <Button mnemonicParsing="false" prefWidth="50.0" text="9" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                              <Button mnemonicParsing="false" onAction="#resetKlick" prefWidth="50.0" text="C" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                              <Button mnemonicParsing="false" prefWidth="50.0" text="," GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                              <Button mnemonicParsing="false" prefWidth="50.0" text="," GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                              <Button mnemonicParsing="false" onAction="#operantErkennen" prefHeight="40.0" prefWidth="100.0" text="*" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                              <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="=" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                              <Button mnemonicParsing="false" onAction="#operantErkennen" prefHeight="40.0" prefWidth="100.0" text="+" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Button mnemonicParsing="false" onAction="#operantErkennen" prefHeight="40.0" prefWidth="100.0" text="-" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                              <Button alignment="CENTER" contentDisplay="CENTER" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="40.0" prefWidth="100.0" text="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Button mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="40.0" prefWidth="100.0" text="2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Button mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="40.0" prefWidth="100.0" text="3" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Button mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="40.0" prefWidth="100.0" text="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="40.0" prefWidth="100.0" text="5" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                              <Button mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="40.0" prefWidth="100.0" text="6" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                              <Button mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="40.0" prefWidth="100.0" text="7" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                              <Button mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="40.0" prefWidth="100.0" text="8" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                              <Button mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="40.0" prefWidth="100.0" text="9" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                              <Button mnemonicParsing="false" onAction="#resetKlick" prefHeight="40.0" prefWidth="100.0" text="C" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                              <Button mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="40.0" prefWidth="100.0" text="," GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                              <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="," GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
                            </children>
                         </GridPane>
                      </children>
@@ -98,7 +98,7 @@
                               <Insets right="10.0" />
                            </padding>
                         </RadioButton>
-                        <RadioButton fx:id="subtraktion" mnemonicParsing="false" onAction="#berechnenKlick" text="Subtraktion" toggleGroup="$meineGruppe">
+                        <RadioButton fx:id="subtraktion" mnemonicParsing="false" text="Subtraktion" toggleGroup="$meineGruppe">
                            <padding>
                               <Insets right="10.0" />
                            </padding>
@@ -116,7 +116,7 @@
                </children>
             </VBox>
             <Separator prefWidth="200.0" />
-            <HBox alignment="CENTER" prefHeight="75.0" prefWidth="450.0">
+            <HBox alignment="CENTER" prefHeight="48.0" prefWidth="400.0">
                <children>
                   <Button mnemonicParsing="false" onAction="#beendenKlick" prefHeight="35.0" prefWidth="107.0" text="Beenden" />
                </children>
@@ -125,4 +125,3 @@
       </VBox>
    </children>
 </AnchorPane>
-
