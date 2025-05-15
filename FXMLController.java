@@ -6,8 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 
@@ -18,31 +17,23 @@ public class FXMLController {
  */
 	
 	@FXML private Stage meineBuehne;
-	@FXML private TextField eingabe1;
-	@FXML private TextField eingabe2;
-	@FXML private Label ausgabe;
+	@FXML private TextField eingabeAusgabe;
 	
-	//einzelne Deklarationen, sonst erkennt es der SceneBuilder nicht	
-	@FXML private Button addition;
-	@FXML private Button subtraktion;
-	@FXML private Button multi;
-	@FXML private Button division;
+
+/*
+ * Die Methoden	
+ */
 	
 	//die Methode setzt die Bühne auf den übergebenen Wert
 	public void setMeineStage(Stage meineStage) {
 		this.meineBuehne = meineStage;
 	}	
 
-	
-/*
- * Die Methoden	
- */
 		
 	//die Methode Reset, um die Felder zurückzusetzen 
 	@FXML protected void resetKlick(ActionEvent event) {
-			eingabe1.clear();
-			eingabe2.clear();
-			ausgabe.setText(null);
+			eingabeAusgabe.clear();
+			eingabeAusgabe.setText(null);
 	}
 	
 	//Methode zum Beenden
@@ -50,10 +41,7 @@ public class FXMLController {
 		Platform.exit();
 	}
 	
-	//Methode zum Berechnen
-	@FXML protected void berechnenKlick(ActionEvent event) {
-		ausgabe.setText(calculate());
-	}
+
 		
 	//Methode für die Software-Info
 	@FXML protected void infoKlick(ActionEvent event) {
@@ -63,7 +51,25 @@ public class FXMLController {
 	}
 	
 	
-	//berechnenMethod für den Button
+	//Methode um ausgewählte Zahl zu erkennen per "get-Text"
+	@FXML protected void nummerErkennen(ActionEvent event) {
+		Button clickedButton = (Button) event.getSource();
+		String number = clickedButton.getText();
+		
+		eingabeAusgabe.setText(number);
+	}
+	
+	
+	//Methode um ausgewählte Rechenoperation zu erkennen per "get-Text"
+	
+	@FXML protected void operantErkennen(ActionEvent event) {
+		Button clickedButton = (Button) event.getSource();
+		String operant = clickedButton.getText();
+		
+		eingabeAusgabe.setText(operant);
+	}
+	
+	/*berechnenMethod für den Button
 	private String calculate() {
 		
 		double zahl1, zahl2, ergebnis = 0;
@@ -106,5 +112,5 @@ public class FXMLController {
 			ausgabe.setText("Nicht definiert!");
 		}
 		return ("Nicht definiert :)");
-	}
+	}*/
 }
