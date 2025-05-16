@@ -25,7 +25,7 @@ public class JavaFX_Taschenrechner extends Application {
 		trController.setMeineStage(meineBuehne);
 		
 		//Scene erstellen
-		Scene meineScene = new Scene(root, 400, 400);
+		Scene meineScene = new Scene(root, 420, 360);
 		
 		//den Titel über stage setzen
 		meineBuehne.setTitle("JavaFX Taschenrechner");
