@@ -61,15 +61,10 @@ public class FXMLController {
 	
 		Button clickedButton = (Button) event.getSource();
 		
-		if (!operatorGedrueckt) {
-			String number = clickedButton.getText();
-			this.zahl1 = Double.parseDouble(number);
-			
-			eingabeAusgabe.appendText(number);
-		}
-		else {
-			
-		}
+		String number = clickedButton.getText();
+	
+		eingabeAusgabe.appendText(number);
+
 	}
 	
 	//Methode um ausgewählte Rechenoperation zu erkennen per "get-Text"
@@ -81,25 +76,44 @@ public class FXMLController {
 		this.zahl1 = Double.parseDouble(eingabeAusgabe.getText());
 		
 		this.operator = clickedButton.getText();
-
-	
+		
 		eingabeAusgabe.clear();
 	}
 	
 	
 	
-	
-	
 	//die Methode für die Berechnung
-	private String calculate() {
+	@FXML private void berechnen(ActionEvent event) {
+		
+		this.zahl2 = Double.parseDouble(eingabeAusgabe.getText());
+		
+		double ergebnis = 0;
 		
 		try {	
-			
-			
+			switch (operator) {
+			case "+":
+				ergebnis = zahl1 + zahl2;
+				break;
+			case "-":
+				ergebnis = zahl1 - zahl2;
+				break;
+			case "*":
+				ergebnis = zahl1*zahl2;
+				break;
+			case "/":
+				if (zahl2 != 0) {
+					ergebnis = zahl1/zahl2;
+				} else {
+					eingabeAusgabe.setText("Nicht definiert");
+					return;
+				}
+				break;
+			}
+			eingabeAusgabe.setText(String.valueOf(ergebnis));
+			operatorGedrueckt = false;
 		} 
 		catch (NumberFormatException e) {
 			eingabeAusgabe.setText("Nicht definiert!");
 		}
-		return ("Nicht definiert :)");
 	}
 }
