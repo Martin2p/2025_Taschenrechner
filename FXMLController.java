@@ -19,16 +19,22 @@ public class FXMLController {
 	@FXML private Stage meineBuehne;
 	@FXML private TextField eingabeAusgabe;
 	
-
+	
+	//Variblen
+	double zahl1;
+	double zahl2;
+	String operator;
+	
+	boolean operatorGedrueckt = false;
+	
+	
 /*
  * Die Methoden	
  */
-	
 	//die Methode setzt die Bühne auf den übergebenen Wert
 	public void setMeineStage(Stage meineStage) {
 		this.meineBuehne = meineStage;
 	}	
-
 		
 	//die Methode Reset, um die Felder zurückzusetzen 
 	@FXML protected void resetKlick(ActionEvent event) {
@@ -40,7 +46,6 @@ public class FXMLController {
 	@FXML protected void beendenKlick(ActionEvent event) {
 		Platform.exit();
 	}
-	
 
 		
 	//Methode für die Software-Info
@@ -53,64 +58,48 @@ public class FXMLController {
 	
 	//Methode um ausgewählte Zahl zu erkennen per "get-Text"
 	@FXML protected void nummerErkennen(ActionEvent event) {
-		Button clickedButton = (Button) event.getSource();
-		String number = clickedButton.getText();
-		
-		eingabeAusgabe.setText(number);
-	}
 	
+		Button clickedButton = (Button) event.getSource();
+		
+		if (!operatorGedrueckt) {
+			String number = clickedButton.getText();
+			this.zahl1 = Double.parseDouble(number);
+			
+			eingabeAusgabe.appendText(number);
+		}
+		else {
+			
+		}
+	}
 	
 	//Methode um ausgewählte Rechenoperation zu erkennen per "get-Text"
 	
 	@FXML protected void operantErkennen(ActionEvent event) {
 		Button clickedButton = (Button) event.getSource();
-		String operant = clickedButton.getText();
+		operatorGedrueckt = true;
 		
-		eingabeAusgabe.setText(operant);
+		this.zahl1 = Double.parseDouble(eingabeAusgabe.getText());
+		
+		this.operator = clickedButton.getText();
+
+	
+		eingabeAusgabe.clear();
 	}
 	
-	/*berechnenMethod für den Button
+	
+	
+	
+	
+	//die Methode für die Berechnung
 	private String calculate() {
 		
-		double zahl1, zahl2, ergebnis = 0;
-		
 		try {	
-			zahl1 = Double.parseDouble(eingabe1.getText());
-			zahl2 = Double.parseDouble(eingabe2.getText());
 			
-			boolean fehlerFlag = false;
-
-				if (addition.isSelected()) {
-					ergebnis = zahl1 + zahl2;
-				}
-				
-				if (subtraktion.isSelected()) {
-					ergebnis = zahl1 - zahl2;
-				}
-				
-				if (division.isSelected()) {
-					if (zahl2 != 0) {
-						ergebnis = zahl1 / zahl2;
-					}
-					else {
-						fehlerFlag = true;
-					}
-				}
-				
-				if (multi.isSelected()) {
-					ergebnis = zahl1 * zahl2;
-				}
-				
-				//wenn es keine Probleme gegeben hat, liefern wir das Ergebnis zurück
-				if (fehlerFlag == false)
-					return Double.toString(ergebnis);
-				else
-					return ("Nicht definiert");
 			
 		} 
 		catch (NumberFormatException e) {
-			ausgabe.setText("Nicht definiert!");
+			eingabeAusgabe.setText("Nicht definiert!");
 		}
 		return ("Nicht definiert :)");
-	}*/
+	}
 }
