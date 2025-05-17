@@ -6,7 +6,6 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -33,210 +32,206 @@
       </MenuBar>
       <VBox layoutX="157.0" layoutY="25.333333333333332" prefHeight="261.0" prefWidth="410.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
          <children>
-            <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="275.0" prefWidth="389.0">
-              <items>
-                  <TextField fx:id="eingabeAusgabe" alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="400.0">
+            <TextField fx:id="eingabeAusgabe" alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="420.0">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <GridPane alignment="CENTER" minHeight="189.0" minWidth="400.0" prefHeight="189.0" prefWidth="420.0">
+              <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" hgrow="NEVER" maxWidth="186.6666259765625" minWidth="10.0" percentWidth="25.0" prefWidth="90.666748046875" />
+                  <ColumnConstraints hgrow="NEVER" maxWidth="193.9999262491862" minWidth="10.0" percentWidth="25.0" prefWidth="99.33329264322917" />
+                <ColumnConstraints hgrow="NEVER" maxWidth="190.0" minWidth="10.0" percentWidth="25.0" prefWidth="99.33333333333334" />
+                <ColumnConstraints hgrow="NEVER" maxWidth="170.33337402343756" minWidth="10.0" percentWidth="25.0" prefWidth="109.33333333333331" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="50.33334096272786" minHeight="8.000001907348633" percentHeight="25.0" prefHeight="36.99995930989583" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="49.00002034505209" minHeight="8.66668701171875" percentHeight="25.0" prefHeight="38.66670735677084" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="54.33335367838541" minHeight="10.0" percentHeight="25.0" prefHeight="38.66666666666666" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="55.33333333333334" minHeight="10.0" percentHeight="25.0" prefHeight="42.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="30.0" mnemonicParsing="false" onAction="#operantErkennen" prefHeight="30.0" prefWidth="100.0" text="/" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
                      <font>
-                        <Font size="30.0" />
+                        <Font size="18.0" />
                      </font>
-                  </TextField>
-                  <GridPane alignment="CENTER" minHeight="200.0" minWidth="400.0" prefHeight="200.0" prefWidth="400.0">
-                    <columnConstraints>
-                        <ColumnConstraints halignment="RIGHT" hgrow="NEVER" maxWidth="186.6666259765625" minWidth="10.0" percentWidth="25.0" prefWidth="90.666748046875" />
-                        <ColumnConstraints hgrow="NEVER" maxWidth="193.9999262491862" minWidth="10.0" percentWidth="25.0" prefWidth="99.33329264322917" />
-                      <ColumnConstraints hgrow="NEVER" maxWidth="190.0" minWidth="10.0" percentWidth="25.0" prefWidth="99.33333333333334" />
-                      <ColumnConstraints hgrow="NEVER" maxWidth="170.33337402343756" minWidth="10.0" percentWidth="25.0" prefWidth="109.33333333333331" />
-                    </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints maxHeight="50.33334096272786" minHeight="8.000001907348633" percentHeight="25.0" prefHeight="36.99995930989583" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="49.00002034505209" minHeight="8.66668701171875" percentHeight="25.0" prefHeight="38.66670735677084" valignment="CENTER" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="54.33335367838541" minHeight="10.0" percentHeight="25.0" prefHeight="38.66666666666666" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="55.33333333333334" minHeight="10.0" percentHeight="25.0" prefHeight="42.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                     <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#operantErkennen" prefHeight="50.0" prefWidth="100.0" text="/" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
-                           <rotationAxis>
-                              <Point3D />
-                           </rotationAxis>
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <GridPane.margin>
-                              <Insets bottom="5.0" />
-                           </GridPane.margin>
-                        </Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#operantErkennen" prefHeight="50.0" prefWidth="100.0" text="+" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                           <rotationAxis>
-                              <Point3D />
-                           </rotationAxis>
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <GridPane.margin>
-                              <Insets bottom="5.0" />
-                           </GridPane.margin>
-                        </Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#operantErkennen" prefHeight="50.0" prefWidth="100.0" text="-" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                           <rotationAxis>
-                              <Point3D />
-                           </rotationAxis>
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <GridPane.margin>
-                              <Insets bottom="5.0" />
-                           </GridPane.margin>
-                        </Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="100.0" mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="50.0" prefWidth="100.0" text="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                           <rotationAxis>
-                              <Point3D />
-                           </rotationAxis>
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <GridPane.margin>
-                              <Insets bottom="5.0" />
-                           </GridPane.margin>
-                        </Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="50.0" prefWidth="100.0" text="2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                           <rotationAxis>
-                              <Point3D />
-                           </rotationAxis>
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <GridPane.margin>
-                              <Insets bottom="5.0" />
-                           </GridPane.margin>
-                        </Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="50.0" prefWidth="100.0" text="3" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                           <rotationAxis>
-                              <Point3D />
-                           </rotationAxis>
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <GridPane.margin>
-                              <Insets bottom="5.0" />
-                           </GridPane.margin>
-                        </Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="50.0" prefWidth="100.0" text="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                           <rotationAxis>
-                              <Point3D />
-                           </rotationAxis>
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <GridPane.margin>
-                              <Insets bottom="5.0" />
-                           </GridPane.margin>
-                        </Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="50.0" prefWidth="100.0" text="5" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                           <rotationAxis>
-                              <Point3D />
-                           </rotationAxis>
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <GridPane.margin>
-                              <Insets bottom="5.0" />
-                           </GridPane.margin>
-                        </Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="50.0" prefWidth="100.0" text="6" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                           <rotationAxis>
-                              <Point3D />
-                           </rotationAxis>
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <GridPane.margin>
-                              <Insets bottom="5.0" />
-                           </GridPane.margin>
-                        </Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="50.0" prefWidth="100.0" text="7" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-                           <rotationAxis>
-                              <Point3D />
-                           </rotationAxis>
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <GridPane.margin>
-                              <Insets bottom="5.0" />
-                           </GridPane.margin>
-                        </Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="50.0" prefWidth="100.0" text="8" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-                           <rotationAxis>
-                              <Point3D />
-                           </rotationAxis>
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <GridPane.margin>
-                              <Insets bottom="5.0" />
-                           </GridPane.margin>
-                        </Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="50.0" prefWidth="100.0" text="9" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-                           <rotationAxis>
-                              <Point3D />
-                           </rotationAxis>
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <GridPane.margin>
-                              <Insets bottom="5.0" />
-                           </GridPane.margin>
-                        </Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="50.0" prefWidth="100.0" text="." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
-                           <rotationAxis>
-                              <Point3D />
-                           </rotationAxis>
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <GridPane.margin>
-                              <Insets bottom="5.0" />
-                           </GridPane.margin>
-                        </Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="50.0" prefWidth="100.0" text="0" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
-                           <rotationAxis>
-                              <Point3D />
-                           </rotationAxis>
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <GridPane.margin>
-                              <Insets bottom="5.0" />
-                           </GridPane.margin>
-                        </Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#operantErkennen" prefHeight="50.0" prefWidth="100.0" text="*" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-                           <rotationAxis>
-                              <Point3D />
-                           </rotationAxis>
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <GridPane.margin>
-                              <Insets bottom="5.0" />
-                           </GridPane.margin>
-                        </Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#berechnen" prefHeight="50.0" prefWidth="100.0" text="=" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
-                           <rotationAxis>
-                              <Point3D />
-                           </rotationAxis>
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <GridPane.margin>
-                              <Insets bottom="5.0" />
-                           </GridPane.margin>
-                        </Button>
-                     </children>
-                  </GridPane>
-              </items>
-            </SplitPane>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="30.0" mnemonicParsing="false" onAction="#operantErkennen" prefHeight="30.0" prefWidth="100.0" text="+" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="30.0" mnemonicParsing="false" onAction="#operantErkennen" prefHeight="30.0" prefWidth="100.0" text="-" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="30.0" maxWidth="100.0" mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="30.0" prefWidth="100.0" text="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="30.0" mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="30.0" prefWidth="100.0" text="2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="30.0" mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="30.0" prefWidth="100.0" text="3" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="30.0" mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="30.0" prefWidth="100.0" text="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="30.0" mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="30.0" prefWidth="100.0" text="5" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="30.0" mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="30.0" prefWidth="100.0" text="6" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="30.0" mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="30.0" prefWidth="100.0" text="7" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="30.0" mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="30.0" prefWidth="100.0" text="8" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="30.0" mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="30.0" prefWidth="100.0" text="9" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="30.0" mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="30.0" prefWidth="100.0" text="." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="30.0" mnemonicParsing="false" onAction="#nummerErkennen" prefHeight="30.0" prefWidth="100.0" text="0" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="30.0" mnemonicParsing="false" onAction="#operantErkennen" prefHeight="30.0" prefWidth="100.0" text="*" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="30.0" mnemonicParsing="false" onAction="#berechnen" prefHeight="30.0" prefWidth="100.0" text="=" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" />
+                     </GridPane.margin>
+                  </Button>
+               </children>
+            </GridPane>
          </children>
       </VBox>
-      <AnchorPane layoutX="2.0" layoutY="300.0" minHeight="0.0" minWidth="0.0" prefHeight="60.0" prefWidth="420.0">
+      <AnchorPane layoutX="2.0" layoutY="287.0" minHeight="0.0" minWidth="0.0" prefHeight="73.0" prefWidth="420.0">
          <children>
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="10.0" mnemonicParsing="false" onAction="#resetKlick" prefHeight="35.0" prefWidth="100.0" text="C" />
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="250.0" layoutY="10.0" mnemonicParsing="false" onAction="#beendenKlick" prefHeight="35.0" prefWidth="100.0" text="Beenden" textAlignment="CENTER" />
