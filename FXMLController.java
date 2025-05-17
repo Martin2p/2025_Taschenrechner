@@ -24,9 +24,9 @@ public class FXMLController {
 	double zahl1;
 	double zahl2;
 	String operator;
-	
+//Hilfsvariable um eine Trennung bei der Erkennung der eingegeben Zahl zu ermöglichen
+	//sobald kein Operator ausgewählt wurde bleibt der Ausdruck "false"
 	boolean operatorGedrueckt = false;
-	
 	
 /*
  * Die Methoden	
@@ -36,7 +36,7 @@ public class FXMLController {
 		this.meineBuehne = meineStage;
 	}	
 		
-	//die Methode Reset, um die Felder zurückzusetzen 
+	//die Methode zum Zurücksetzen der Felder
 	@FXML protected void resetKlick(ActionEvent event) {
 			eingabeAusgabe.clear();
 			eingabeAusgabe.setText(null);
@@ -58,24 +58,30 @@ public class FXMLController {
 	
 	//Methode um ausgewählte Zahl zu erkennen per "get-Text"
 	@FXML protected void nummerErkennen(ActionEvent event) {
-	
+		
+		//hier wird der geklickte Button erkannt und einer Variable zugewießen
 		Button clickedButton = (Button) event.getSource();
 		
+		//die Zahl des geklickten Buttons wird eingelesen und als String-Variable gespeichert
 		String number = clickedButton.getText();
 	
+		//die String-Variable wird im Eingabe-Ausgabe-Feld eingefügt
 		eingabeAusgabe.appendText(number);
-
 	}
 	
-	//Methode um ausgewählte Rechenoperation zu erkennen per "get-Text"
 	
+	//Methode um ausgewählte Rechenoperation zu erkennen per "get-Text"
 	@FXML protected void operantErkennen(ActionEvent event) {
+		
+		//geklickten Button erkennen
 		Button clickedButton = (Button) event.getSource();
+		
+		//Die oben initialisierte Hilfsvariable wird nun auf "true" gesetzt. 
+		//Dies ist notwendig, um die erste Zahl die vor dem Operator steht zu erkennen und abzuspeichern.
 		operatorGedrueckt = true;
 		
+		//erkennen der ersten Zahl und umwandeln in einen Double-Wert
 		this.zahl1 = Double.parseDouble(eingabeAusgabe.getText());
-		
-		this.operator = clickedButton.getText();
 		
 		eingabeAusgabe.clear();
 	}
