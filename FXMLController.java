@@ -15,16 +15,15 @@ public class FXMLController {
 /*
  * Deklarationen
  */
-	
 	@FXML private Stage meineBuehne;
 	@FXML private TextField eingabeAusgabe;
-	
 	
 	//Variblen
 	double zahl1;
 	double zahl2;
 	String operator;
-//Hilfsvariable um eine Trennung bei der Erkennung der eingegeben Zahl zu ermöglichen
+	
+	//Hilfsvariable um eine Trennung bei der Erkennung der eingegeben Zahl zu ermöglichen
 	//sobald kein Operator ausgewählt wurde bleibt der Ausdruck "false"
 	boolean operatorGedrueckt = false;
 	
@@ -46,14 +45,12 @@ public class FXMLController {
 		Platform.exit();
 	}
 
-		
 	//Methode für die Software-Info
 	@FXML protected void infoKlick(ActionEvent event) {
 		Alert info = new Alert(AlertType.INFORMATION, "Von Martin Tastler");
 		info.setHeaderText("Taschenrechner Version 1.0");
 		info.show();
 	}
-	
 	
 	//Methode um ausgewählte Zahl zu erkennen per "get-Text"
 	@FXML protected void nummerErkennen(ActionEvent event) {
@@ -67,7 +64,6 @@ public class FXMLController {
 		//die String-Variable wird im Eingabe-Ausgabe-Feld eingefügt
 		eingabeAusgabe.appendText(number);
 	}
-	
 	
 	//Methode um ausgewählte Rechenoperation zu erkennen per "get-Text"
 	@FXML protected void operantErkennen(ActionEvent event) {
@@ -89,7 +85,6 @@ public class FXMLController {
 		eingabeAusgabe.clear();
 	}
 	
-		
 	//die Methode für die Berechnung
 	@FXML private void berechnen(ActionEvent event) {
 		
@@ -98,7 +93,6 @@ public class FXMLController {
 		
 		//Try-Catch-Block um Falscheingaben wie Buchstaben abzufangen 
 		try {
-			
 			//da nach der Auswahl des Operator das Eingabe-Ausgabefeld geleert wurde
 			//kann nun eine neue Zahl eingelesen und abgespeichert werden
 			this.zahl2 = Double.parseDouble(eingabeAusgabe.getText());
