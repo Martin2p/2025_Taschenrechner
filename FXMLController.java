@@ -39,7 +39,6 @@ public class FXMLController {
 	//die Methode zum Zurücksetzen der Felder
 	@FXML protected void resetKlick(ActionEvent event) {
 			eingabeAusgabe.clear();
-			eingabeAusgabe.setText(null);
 	}
 	
 	//Methode zum Beenden
@@ -83,41 +82,56 @@ public class FXMLController {
 		//erkennen der ersten Zahl und umwandeln in einen Double-Wert
 		this.zahl1 = Double.parseDouble(eingabeAusgabe.getText());
 		
+		//jetzt wird der Operator von dem geklickten Button eingelesen und übergeben an die Operator-Variable
+		this.operator = clickedButton.getText();
+		
+		//Eingabe-Ausgabefeld leeren
 		eingabeAusgabe.clear();
 	}
-	
-	
 	
 	//die Methode für die Berechnung
 	@FXML private void berechnen(ActionEvent event) {
 		
-		this.zahl2 = Double.parseDouble(eingabeAusgabe.getText());
-		
+		//Initialsieren vom Ergebnis
 		double ergebnis = 0;
 		
-		try {	
+		//Try-Catch-Block um Falscheingaben wie Buchstaben abzufangen 
+		try {
+			//da nach der Auswahl des Operator das Eingabe-Ausgabefeld geleert wurde
+			//kann nun eine neue Zahl eingelesen und abgespeichert werden
+			this.zahl2 = Double.parseDouble(eingabeAusgabe.getText());
+			
+			//Switch-Case Anweisung für die 4 Grundrechenarten
 			switch (operator) {
-			case "+":
-				ergebnis = zahl1 + zahl2;
-				break;
-			case "-":
-				ergebnis = zahl1 - zahl2;
-				break;
-			case "*":
-				ergebnis = zahl1*zahl2;
-				break;
-			case "/":
-				if (zahl2 != 0) {
-					ergebnis = zahl1/zahl2;
-				} else {
-					eingabeAusgabe.setText("Nicht definiert");
-					return;
-				}
-				break;
+				case "+":
+					ergebnis = zahl1 + zahl2;
+					break;
+				case "-":
+					ergebnis = zahl1 - zahl2;
+					break;
+				case "*":
+					ergebnis = zahl1*zahl2;
+					break;
+				case "/":
+					
+					if (zahl2 != 0) {
+						ergebnis = zahl1/zahl2;
+						
+					//Abfangen der Division durch 0
+					} else {
+						eingabeAusgabe.setText("Nicht definiert");
+						return;
+					}
+					break;
 			}
+			
+			//das Ergebnis in einen String umwandeln und in das Eingabe-Ausgabefeld setzen
 			eingabeAusgabe.setText(String.valueOf(ergebnis));
+			
+			//Hilfsvariable wieder auf "false" setzen um ein erneutes Einlesen der Zahl im Feld zu ermöglichen
 			operatorGedrueckt = false;
-		} 
+		}
+		//Fehlerhafte Eingaben abfangen
 		catch (NumberFormatException e) {
 			eingabeAusgabe.setText("Nicht definiert!");
 		}
