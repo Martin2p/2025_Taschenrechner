@@ -89,6 +89,7 @@ public class FXMLController {
 		eingabeAusgabe.clear();
 	}
 	
+		
 	//die Methode für die Berechnung
 	@FXML private void berechnen(ActionEvent event) {
 		
@@ -97,6 +98,7 @@ public class FXMLController {
 		
 		//Try-Catch-Block um Falscheingaben wie Buchstaben abzufangen 
 		try {
+			
 			//da nach der Auswahl des Operator das Eingabe-Ausgabefeld geleert wurde
 			//kann nun eine neue Zahl eingelesen und abgespeichert werden
 			this.zahl2 = Double.parseDouble(eingabeAusgabe.getText());
@@ -117,23 +119,33 @@ public class FXMLController {
 					if (zahl2 != 0) {
 						ergebnis = zahl1/zahl2;
 						
-					//Abfangen der Division durch 0
+						//Abfangen der Division durch 0
 					} else {
 						eingabeAusgabe.setText("Nicht definiert");
-						return;
+					return;
 					}
-					break;
+			break;
 			}
 			
-			//das Ergebnis in einen String umwandeln und in das Eingabe-Ausgabefeld setzen
-			eingabeAusgabe.setText(String.valueOf(ergebnis));
+			//wenn das Ergebnis eine "glatte" Zahl ist, erfolgt die Anzeige als int-Wert / ohne Kommastelle
+			if (ergebnis % 1 == 0) {
+				//das Ergebnis in einen String umwandeln und in das Eingabe-Ausgabefeld setzen
+				eingabeAusgabe.setText(String.valueOf((int)ergebnis));
+			} else {
+				eingabeAusgabe.setText(String.valueOf(ergebnis));
+			}
 			
 			//Hilfsvariable wieder auf "false" setzen um ein erneutes Einlesen der Zahl im Feld zu ermöglichen
 			operatorGedrueckt = false;
 		}
-		//Fehlerhafte Eingaben abfangen
+		
+		//Fehlerhafte Eingaben wie Buchstaben abfangen
 		catch (NumberFormatException e) {
-			eingabeAusgabe.setText("Nicht definiert!");
+			eingabeAusgabe.setText("Bitte nur Zahlen eingeben!");
+		}
+		//sonstige Fehler abfangen
+		catch (Exception e) {
+		    eingabeAusgabe.setText("Unbekannter Fehler!");
 		}
 	}
 }
